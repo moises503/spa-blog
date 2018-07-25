@@ -13,6 +13,8 @@ class Post extends Model
 
     protected $dates = ['published_at'];
 
+    protected $appends = ['published_date'];
+
     protected static function boot()
     {
         parent::boot();
@@ -26,6 +28,11 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'url';
+    }
+
+    public function getPublishedDateAttribute()
+    {
+        return optional($this->published_at)->format('M d');
     }
 
     public function category()
