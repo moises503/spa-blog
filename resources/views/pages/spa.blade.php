@@ -33,8 +33,12 @@
         </div>
     </header>
 
+    <div class="page-wrapper">
+        <transition name="slide-fade" mode="out-in">
+            <router-view :key="$route.fullPath"></router-view>
+        </transition>
+    </div>
 
-    <router-view :key="$route.fullPath"></router-view>
 
     <section class="footer">
         <footer>

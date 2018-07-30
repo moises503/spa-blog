@@ -21,6 +21,7 @@
                     this.items = res.data.data;
                     this.pagination = res.data;
                     delete this.pagination.data
+                    console.log(res)
                 })
                 .catch(err => {
                     console.log(err)
